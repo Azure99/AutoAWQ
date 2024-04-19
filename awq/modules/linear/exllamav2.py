@@ -69,7 +69,7 @@ class WQLinear_ExllamaV2(nn.Module):
             self.bias = None
 
     def post_init(self, scratch_space: "ScratchSpace"):
-        assert self.qweight.device.type == "cuda"
+        # assert self.qweight.device.type == "cuda"
         assert self.qweight.device.index is not None
 
         self.qweight, self.qzeros = unpack_reorder_pack(
